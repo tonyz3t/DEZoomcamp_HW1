@@ -9,3 +9,9 @@ Question 1:
 
 Answer: pip 25.3
 
+Question 2:
+Answers: 
+  - postgres:5432
+  - db:5432
+
+Question 3: 
