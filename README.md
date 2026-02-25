@@ -15,3 +15,16 @@ Answers:
   - db:5432
 
 Question 3: 
+
+> select count(*) from green_taxi_data where lpep_pickup_datetime > 2025_11_01 AND lpep_pickup_datetime < 2025_12_01 AND trip_distance <= 1.09
+
+Answer: 8007
+
+Question 4:
+
+> select lpep_pickup_datetime from green_taxi_data where trip_distance = (SELECT MAX(trip_distance) from green_taxi_data where green_taxi_data.trip_distance < 100.00)
+
+Answer: 2025-11-24
+
+
+
