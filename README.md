@@ -26,5 +26,20 @@ Question 4:
 
 Answer: 2025-11-24
 
+Question 5:
+
+>create table trimmed_green as select g1.lpep_pickup_datetime, g1."PULocationID", z1."LocationID", z1."Zone" from green_taxi_data g1 LEFT JOIN zone_lookup z1 on g1."PULocationID" = z1."LocationID" where g1.lpep_pickup_datetime > '2025-11-17' and g1.lpep_pickup_datetime < '2025-11-19'
+
+>select "LocationID" , SUM("LocationID"), "Zone"  from trimmed_green group by "LocationID", "Zone" ORDER BY SUM("LocationID") DESC
+
+> first in the output will be the correct answer
+
+Answer: East Harlem North
+
+question 6:
+
+> select g1.lpep_pickup_datetime, g1."PULocationID", g1."DOLocationID", g1.tip_amount, z1."LocationID", z1."Zone" from green_taxi_data g1 LEFT JOIN zone_lookup z1 on g1."DOLocationID" = z1."LocationID" where g1.lpep_pickup_datetime >= '2025-11-01' and g1.lpep_pickup_datetime < '2025-12-01' and g1."PULocationID" = 74 ORDER BY g1.tip_amount DESC
+
+Answer: Yorkville West
 
 
